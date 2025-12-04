@@ -1,6 +1,8 @@
+from service.menu import menu_utama
+
 def main():
-    print("hello")
+    menu_utama()
 
 
-if __name__ :
+if __name__ == "__main__" :
     main()
