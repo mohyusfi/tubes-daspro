@@ -2,7 +2,6 @@ import random
 
 def playLevel1(bet, balance):
     mathRandom = random.randrange(1, 4, 1)
-    userBalance = balance
 
     print("ACHIEVE 3X RETURNS!")
     print("________________")
