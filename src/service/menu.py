@@ -1,14 +1,16 @@
-def menu_utama():   
+from service import judol_service as JudolService
+from utils import menu as UtilsMenu
+
+def mainMenu():   
     while True: 
-        print("====MENU UTAMA====")
-        print("1. Mulai")
-        print("2. Tambah Saldo")
-        print("3. Tarik Saldo")
-        print("4. Berhenti")
+        UtilsMenu.showListMenu()
         menu = input("pilih menu: ")
         match menu:
             case "1":
-                print("Mulai")
+                UtilsMenu.showLevel()
+                level = int(input("level: "))
+                amount_bet = int(input("Jumlah taruhan: Rp."))
+                JudolService.playGame(amount_bet, level, 10000)
             case "2":
                 print("Mulai")
             case "3":
@@ -17,7 +19,6 @@ def menu_utama():
                 break
             case _:
                 print("menu tidak di temukan!")
-        
-if __name__ == "__main__":
-    menu_utama()
 
+if __name__ == "main":
+    mainMenu()

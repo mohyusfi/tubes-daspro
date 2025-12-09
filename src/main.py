@@ -1,7 +1,7 @@
-from service.menu import menu_utama
+from service.menu import mainMenu
 
 def main():
-    menu_utama()
+    mainMenu()
 
 
 if __name__ == "__main__" :
