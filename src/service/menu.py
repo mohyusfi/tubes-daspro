@@ -7,10 +7,13 @@ def mainMenu():
         menu = input("pilih menu: ")
         match menu:
             case "1":
-                UtilsMenu.showLevel()
-                level = int(input("level: "))
-                amount_bet = int(input("Jumlah taruhan: Rp."))
-                JudolService.playGame(amount_bet, level, 10000)
+                try:
+                    UtilsMenu.showLevel()   
+                    level = int(input("level: "))
+                    amount_bet = int(input("Jumlah taruhan: Rp."))
+                    JudolService.playGame(amount_bet, level, 10000)
+                except:
+                    print("Terjadi Kesalahan!")
             case "2":
                 print("Mulai")
             case "3":
@@ -19,6 +22,8 @@ def mainMenu():
                 break
             case _:
                 print("menu tidak di temukan!")
+        
+        print("\n\n\n")
 
-if __name__ == "main":
+if __name__ == "__main__":
     mainMenu()
