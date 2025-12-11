@@ -16,15 +16,26 @@ def mainMenu():
                 except:
                     print("Terjadi Kesalahan!")
             case "2":
-                print("Mulai")
+                try:
+                    amount = int(input("Rp"))
+                    WalletService.topupBalance(amount)
+                    print(f"Berhasil menambah saldo: Rp{amount}")
+                except:
+                    print("Terjadi kesalahan")
             case "3":
-                print("Mulai")
+                try:
+                    bank = input("Bank: ")
+                    accountNumber = input("Account Number: ")
+                    amount = int(input("Rp"))
+                    WalletService.withdrawBalance(bank, accountNumber, amount)
+                except:
+                    print("Terjadi kesalahan")
             case "4":
                 break
             case _:
                 print("menu tidak di temukan!")
         
-        print("\n\n\n")
+        print("\n\n")
 
 if __name__ == "__main__":
     mainMenu()

@@ -1,7 +1,6 @@
 import random
 from service import wallet_service
 
-userBalance = None
 
 def playLevel1(bet):
     mathRandom = random.randrange(1, 4, 1)
