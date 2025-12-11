@@ -1,8 +1,9 @@
-from service import judol_service as JudolService
+from service import judol_service as JudolService, wallet_service as WalletService
 from utils import menu as UtilsMenu
 
 def mainMenu():   
     while True: 
+        UtilsMenu.userProfile()
         UtilsMenu.showListMenu()
         menu = input("pilih menu: ")
         match menu:
@@ -11,7 +12,7 @@ def mainMenu():
                     UtilsMenu.showLevel()   
                     level = int(input("level: "))
                     amount_bet = int(input("Jumlah taruhan: Rp."))
-                    JudolService.playGame(amount_bet, level, 10000)
+                    JudolService.playGame(amount_bet, level)
                 except:
                     print("Terjadi Kesalahan!")
             case "2":

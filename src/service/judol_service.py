@@ -1,5 +1,5 @@
 import random
-import wallet_service
+from service import wallet_service
 
 userBalance = None
 
@@ -108,4 +108,8 @@ def playGame(bet, level):
         case 3:
             playLevel3(bet)
 
-playGame(5000, 3)
+
+
+# testing functions
+if __name__ == "__main__":
+    playGame(5000, 3)
