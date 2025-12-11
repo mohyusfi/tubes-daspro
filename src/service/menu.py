@@ -1,27 +1,28 @@
 from service import judol_service as JudolService, wallet_service as WalletService
-from utils import menu as UtilsMenu
+from utils import menu as UtilMenu, balance as UtilBalance
 
 def mainMenu():   
     while True: 
-        UtilsMenu.userProfile()
-        UtilsMenu.showListMenu()
+        UtilMenu.userProfile()
+        UtilMenu.showListMenu()
         menu = input("pilih menu: ")
         match menu:
             case "1":
                 try:
-                    UtilsMenu.showLevel()   
+                    UtilMenu.showLevel()   
                     level = int(input("level: "))
                     amount_bet = int(input("Jumlah taruhan: Rp."))
+                    UtilBalance.validateAmountBet(amount_bet)
                     JudolService.playGame(amount_bet, level)
-                except:
-                    print("Terjadi Kesalahan!")
+                except Exception as e:
+                    print(f"Terjadi kesalahan: {e}")
             case "2":
                 try:
                     amount = int(input("Rp"))
                     WalletService.topupBalance(amount)
                     print(f"Berhasil menambah saldo: Rp{amount}")
-                except:
-                    print("Terjadi kesalahan")
+                except Exception as e:
+                    print(f"Terjadi kesalahan: {e}")
             case "3":
                 try:
                     bank = input("Bank: ")
